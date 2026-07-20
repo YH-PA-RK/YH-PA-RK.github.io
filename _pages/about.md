@@ -26,7 +26,22 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
-
+<style>
+.post-title {
+  font-size: 3.2rem !important;
+  line-height: 1.1;
+}
+.desc {
+  font-size: 1.2rem !important;
+  color: #555;
+}
+img.img-fluid.rounded {
+  border-radius: 50% !important;
+  width: 260px !important;
+  height: 260px !important;
+  object-fit: cover;
+}
+</style>
 I am an undergraduate student in the Department of Nursing at Chung-Ang University (expected graduation: Feb. 2028), with research interests in nursing informatics, healthcare AI, human-AI interaction, and medical big data analytics.
 
 I am particularly interested in how data-driven and AI-based approaches can improve clinical workflow, promote patient health, and prevent medical errors.
