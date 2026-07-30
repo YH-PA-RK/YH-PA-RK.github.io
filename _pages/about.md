@@ -36,7 +36,6 @@ latest_posts:
   color: #555;
 }
 img.img-fluid.rounded {
-  border-radius: 50% !important;
   width: 260px !important;
   height: 260px !important;
   object-fit: cover;
