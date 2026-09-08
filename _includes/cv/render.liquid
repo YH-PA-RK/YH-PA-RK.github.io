@@ -95,13 +95,13 @@
   <article>
     <div class="cv">
       <div class="card mt-3 p-3">
-        <h3 class="card-title font-weight-medium">{{ cv.name }}</h3>
-        <p>{{ cv.label }}</p>
+        <h3 class="card-title font-weight-medium">{{ cv.name | escape }}</h3>
+        <p>{{ cv.label | escape }}</p>
         <p>
-          <a href="mailto:{{ cv.email }}">{{ cv.email }}</a>
+          <a href="mailto:{{ cv.email | escape }}">{{ cv.email | escape }}</a>
         </p>
         {% if cv.summary %}
-          <p>{{ cv.summary }}</p>
+          <p>{{ cv.summary | escape }}</p>
         {% endif %}
       </div>
 
@@ -133,13 +133,13 @@
               <div>
                 <strong>
                   {% if entry.institution %}
-                    {{ entry.institution }}
+                    {{ entry.institution | escape }}
                   {% elsif entry.position %}
-                    {{ entry.position }}
+                    {{ entry.position | escape }}
                   {% elsif entry.title %}
-                    {{ entry.title }}
+                    {{ entry.title | escape }}
                   {% else %}
-                    {{ entry.name }}
+                    {{ entry.name | escape }}
                   {% endif %}
                 </strong>
               </div>
@@ -148,44 +148,44 @@
                 <div class="cv-date">
                   <span class="badge font-weight-bold danger-color-dark">
                     {{- entry.start_date -}}
-                    {%- if entry.end_date and entry.end_date != entry.start_date %} &ndash; {{ entry.end_date }}{% endif -%}
+                    {%- if entry.end_date and entry.end_date != entry.start_date %} &ndash; {{ entry.end_date | escape }}{% endif -%}
                   </span>
                 </div>
               {% elsif entry.date %}
-                <div class="cv-date">{{ entry.date }}</div>
+                <div class="cv-date">{{ entry.date | escape }}</div>
               {% endif %}
               {% if entry.company %}
-                <div>{{ entry.company }}</div>
+                <div>{{ entry.company | escape }}</div>
               {% endif %}
 
               {% if entry.studyType %}
-                <div>{{ entry.studyType }} in {{ entry.area }}</div>
+                <div>{{ entry.studyType | escape }} in {{ entry.area | escape }}</div>
               {% endif %}
 
               {% if entry.location %}
-                <div>{{ entry.location }}</div>
+                <div>{{ entry.location | escape }}</div>
               {% endif %}
 
               {% if entry.awarder %}
-                <div>{{ entry.awarder }}</div>
+                <div>{{ entry.awarder | escape }}</div>
               {% endif %}
 
               {% if entry.issuer %}
-                <div>{{ entry.issuer }}</div>
+                <div>{{ entry.issuer | escape }}</div>
               {% endif %}
 
               {% if entry.summary %}
-                <div>{{ entry.summary }}</div>
+                <div>{{ entry.summary | escape }}</div>
               {% endif %}
 
               {% if entry.keywords %}
-                <div>{{ entry.keywords }}</div>
+                <div>{{ entry.keywords | escape }}</div>
               {% endif %}
 
               {% if entry.highlights %}
                 <ul>
                   {% for highlight in entry.highlights %}
-                    <li>{{ highlight }}</li>
+                    <li>{{ highlight | escape }}</li>
                   {% endfor %}
                 </ul>
               {% endif %}
