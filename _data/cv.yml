@@ -21,7 +21,7 @@ cv:
         area: Nursing
         studyType: Bachelor of Science
         start_date: "2022-03"
-        end_date: "2028-02"
+        end_date: present
         highlights:
           - "Expected graduation: February 2028."
           - "Cumulative GPA: 4.30 / 4.50."
@@ -32,7 +32,6 @@ cv:
         location: Pyeongtaek, South Korea
         start_date: "2021-12"
         end_date: "2022-02"
-        summary: Three-month contract position in the Infection Control Team.
 
     Awards:
       - title: Academic Excellence Scholarship
@@ -68,13 +67,13 @@ cv:
 
     Volunteer:
       - company: SeRaPhic, Department of Nursing, Chung-Ang University
-        position: Overseas Volunteering Club — Member
+        position: Overseas Volunteering Club — Member, 8th Cohort
         start_date: 2022
         end_date: 2022
         summary: Member of the overseas volunteering club.
 
       - company: SeRaPhic, Department of Nursing, Chung-Ang University
-        position: Overseas Volunteering Club — HR Team Treasurer, 8th Cohort
+        position: Overseas Volunteering Club — HR Team Treasurer
         start_date: 2023
         end_date: 2023
         summary: Served as HR team treasurer for the overseas volunteering club.
@@ -100,7 +99,7 @@ cv:
         summary: "Fall 2023 semester."
         highlights:
           - Tutored three students in Physiology.
-          - Received the Encouragement Award.
+          - "🎉 Received the Encouragement Award."
 
       - company: Chung-Ang University Tutoring Program
         position: Tutoring — Health Assessment
@@ -109,14 +108,16 @@ cv:
         summary: "Spring 2024 semester."
         highlights:
           - Tutored four students in Health Assessment.
-          - Received the Excellence Award.
+          - "🎉 Received the Excellence Award."
 
     Certificates:
       - name: SQL Developer (SQLD)
         date: 2026
+        issuer: Korea Data Agency
 
       - name: Advanced Data Analytics Semi-Professional (ADsP)
         date: 2026
+        issuer: Korea Data Agency
 
       - name: HTHT (High Touch High Tech) Master Badge
         date: 2025
