@@ -25,12 +25,6 @@ cv:
         highlights:
           - "Expected graduation: February 2028."
           - "Cumulative GPA: 4.30 / 4.50."
-          - "Community Health Nursing Clinical Practice (2024): A+."
-          - "Community Health Nursing II (2024): A+."
-          - "Health Promotion (2023): A+."
-          - "Statistics for Nursing Research (2023)."
-          - "Computational Thinking and AI Literacy (2022)."
-          - "Introduction to Software-Driven World (2022)."
 
     Experience:
       - company: Pyeongtaek St. Mary's Hospital
@@ -49,7 +43,7 @@ cv:
         awarder: Chung-Ang University Alumni Association
         summary: "Awarded in Fall 2022 and Fall 2024."
 
-      - title: Jin-jung Jeong Scholarship (진정주 장학금)
+      - title: Jin-jung Jeong Scholarship
         awarder: Chung-Ang University
         summary: "Awarded in Spring 2023."
 
@@ -69,39 +63,38 @@ cv:
         awarder: Chung-Ang University
         summary: "Awarded in Spring 2024."
 
-      - title: Scholarship for Children of Restaurant Owners (우아한 사장님 자녀 장학금)
+      - title: Scholarship for Children of Restaurant Owners
         summary: "Awarded in Spring 2024 and Fall 2024."
 
     Volunteer:
       - company: SeRaPhic, Department of Nursing, Chung-Ang University
-        position: HR Team Treasurer, 8th Cohort
-        start_date: 2023
-        end_date: 2023
-        summary: Served as HR team treasurer for the overseas volunteering club.
-
-      - company: SeRaPhic, Department of Nursing, Chung-Ang University
-        position: Member
+        position: Overseas Volunteering Club — Member
         start_date: 2022
         end_date: 2022
         summary: Member of the overseas volunteering club.
 
+      - company: SeRaPhic, Department of Nursing, Chung-Ang University
+        position: Overseas Volunteering Club — HR Team Treasurer, 8th Cohort
+        start_date: 2023
+        end_date: 2023
+        summary: Served as HR team treasurer for the overseas volunteering club.
+
       - company: Nurly, Department of Nursing, Chung-Ang University
-        position: Video Team Member, 5th Cohort
+        position: Student Ambassador — Video Team Member, 5th Cohort
         start_date: 2023
         end_date: 2023
         summary: Member of the nursing department's student ambassador video team.
 
-      - company: Chung-Ang University Tutoring Program
-        position: Tutor, Health Assessment
-        start_date: 2024
-        end_date: 2024
-        summary: "Spring 2024 semester."
+      - company: Department of Nursing Mentoring Program, Chung-Ang University
+        position: Mentoring — Anatomy
+        start_date: 2023
+        end_date: 2023
+        summary: "Spring 2023 semester."
         highlights:
-          - Tutored four students in Health Assessment.
-          - Received the Excellence Award.
+          - Mentored two students in Anatomy.
 
       - company: Chung-Ang University Tutoring Program
-        position: Tutor, Physiology
+        position: Tutoring — Physiology
         start_date: 2023
         end_date: 2023
         summary: "Fall 2023 semester."
@@ -109,13 +102,14 @@ cv:
           - Tutored three students in Physiology.
           - Received the Encouragement Award.
 
-      - company: Department of Nursing Mentoring Program, Chung-Ang University
-        position: Mentor, Anatomy
-        start_date: 2023
-        end_date: 2023
-        summary: "Spring 2023 semester."
+      - company: Chung-Ang University Tutoring Program
+        position: Tutoring — Health Assessment
+        start_date: 2024
+        end_date: 2024
+        summary: "Spring 2024 semester."
         highlights:
-          - Mentored two students in Anatomy.
+          - Tutored four students in Health Assessment.
+          - Received the Excellence Award.
 
     Certificates:
       - name: SQL Developer (SQLD)
@@ -150,7 +144,7 @@ cv:
 
       - name: Chinese Characters (Hanja), Level 4
         date: 2023
-        issuer: 한국평생교육평가원
+        issuer: Korea Institute of Live-long Education Evaluation
 
     Interests:
       - name: Research Interests

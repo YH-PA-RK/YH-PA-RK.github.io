@@ -23,7 +23,7 @@
   }
   .folio-cv .cv-dated {
     display: grid;
-    grid-template-columns: 8rem minmax(0, 1fr);
+    grid-template-columns: 11rem minmax(0, 1fr);
     column-gap: 1.25rem;
   }
   .folio-cv .cv-dated > * {
@@ -42,7 +42,7 @@
   .folio-cv .cv-date .badge {
     font-size: 0.875rem;
     padding: 0.35rem 0.5rem;
-    white-space: normal;
+    white-space: nowrap;
     line-height: 1.4;
   }
   .folio-cv .cv-entry ul {
@@ -62,7 +62,10 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 1rem;
-    padding: 0.65rem 0;
+    padding: 0.85rem 1rem;
+    margin-top: 0.65rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 2px;
   }
   .folio-cv .cv-certificates .cv-entry > * {
     grid-column: 1;
@@ -94,17 +97,6 @@
 
   <article>
     <div class="cv">
-      <div class="card mt-3 p-3">
-        <h3 class="card-title font-weight-medium">{{ cv.name | escape }}</h3>
-        <p>{{ cv.label | escape }}</p>
-        <p>
-          <a href="mailto:{{ cv.email | escape }}">{{ cv.email | escape }}</a>
-        </p>
-        {% if cv.summary %}
-          <p>{{ cv.summary | escape }}</p>
-        {% endif %}
-      </div>
-
       {% for section in cv.sections %}
         {% assign section_name = section[0] %}
         {% assign entries = section[1] %}
@@ -147,7 +139,7 @@
               {% if entry.start_date %}
                 <div class="cv-date">
                   <span class="badge font-weight-bold danger-color-dark">
-                    {{- entry.start_date -}}
+                    {{- entry.start_date | escape -}}
                     {%- if entry.end_date and entry.end_date != entry.start_date %} &ndash; {{ entry.end_date | escape }}{% endif -%}
                   </span>
                 </div>
