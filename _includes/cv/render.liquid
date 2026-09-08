@@ -1,4 +1,88 @@
-<div class="post">
+<style>
+  .folio-cv {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .folio-cv .card {
+    margin-bottom: 1.5rem;
+  }
+  .folio-cv .card-title {
+    margin-bottom: 1.25rem;
+    scroll-margin-top: 6rem;
+  }
+  .folio-cv .cv-entry {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .folio-cv .cv-entry:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  .folio-cv .cv-entry:first-child {
+    padding-top: 0;
+  }
+  .folio-cv .cv-dated {
+    display: grid;
+    grid-template-columns: 8rem minmax(0, 1fr);
+    column-gap: 1.25rem;
+  }
+  .folio-cv .cv-dated > * {
+    grid-column: 2;
+    min-width: 0;
+  }
+  .folio-cv .cv-dated > .cv-date {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  .folio-cv .cv-date {
+    color: var(--global-theme-color);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .folio-cv .cv-date .badge {
+    font-size: 0.875rem;
+    padding: 0.35rem 0.5rem;
+    white-space: normal;
+    line-height: 1.4;
+  }
+  .folio-cv .cv-entry ul {
+    margin: 0.6rem 0 0;
+    padding-left: 1.25rem;
+  }
+  .folio-cv .cv-entry li {
+    margin-bottom: 0.25rem;
+  }
+  .folio-cv .cv-entry strong {
+    font-weight: 600;
+  }
+  .folio-cv a {
+    overflow-wrap: anywhere;
+  }
+  .folio-cv .cv-certificates .cv-entry {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 1rem;
+    padding: 0.65rem 0;
+  }
+  .folio-cv .cv-certificates .cv-entry > * {
+    grid-column: 1;
+  }
+  .folio-cv .cv-certificates .cv-entry > .cv-date {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  @media (max-width: 600px) {
+    .folio-cv .cv-dated {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .folio-cv .cv-dated > .cv-date {
+      order: -1;
+    }
+  }
+</style>
+<div class="post folio-cv">
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     {% if page.description %}
@@ -11,11 +95,13 @@
   <article>
     <div class="cv">
       <div class="card mt-3 p-3">
-        <h3 class="card-title font-weight-medium">{{ cv.name }}</h3>
-        <p>{{ cv.label }}</p>
-        <p><a href="mailto:{{ cv.email }}">{{ cv.email }}</a></p>
+        <h3 class="card-title font-weight-medium">{{ cv.name | escape }}</h3>
+        <p>{{ cv.label | escape }}</p>
+        <p>
+          <a href="mailto:{{ cv.email | escape }}">{{ cv.email | escape }}</a>
+        </p>
         {% if cv.summary %}
-          <p>{{ cv.summary }}</p>
+          <p>{{ cv.summary | escape }}</p>
         {% endif %}
       </div>
 
@@ -23,7 +109,7 @@
         {% assign section_name = section[0] %}
         {% assign entries = section[1] %}
 
-        <div class="card mt-3 p-3">
+        <div class="card mt-3 p-3 cv-{{ section_name | slugify }}">
           <h3
             class="card-title font-weight-medium"
             id="{{ section_name | slugify }}"
@@ -43,66 +129,63 @@
           </h3>
 
           {% for entry in entries %}
-            <div style="margin-bottom: 1.5rem;">
+            <div class="cv-entry{% if entry.start_date %} cv-dated{% endif %}">
               <div>
                 <strong>
                   {% if entry.institution %}
-                    {{ entry.institution }}
+                    {{ entry.institution | escape }}
                   {% elsif entry.position %}
-                    {{ entry.position }}
+                    {{ entry.position | escape }}
                   {% elsif entry.title %}
-                    {{ entry.title }}
+                    {{ entry.title | escape }}
                   {% else %}
-                    {{ entry.name }}
+                    {{ entry.name | escape }}
                   {% endif %}
                 </strong>
               </div>
 
               {% if entry.start_date %}
-                <div style="font-size: 0.9rem; opacity: 0.75;">
-                  {{ entry.start_date }}
-                  {% if entry.end_date and entry.end_date != entry.start_date %}
-                    &ndash; {{ entry.end_date }}
-                  {% endif %}
+                <div class="cv-date">
+                  <span class="badge font-weight-bold danger-color-dark">
+                    {{- entry.start_date -}}
+                    {%- if entry.end_date and entry.end_date != entry.start_date %} &ndash; {{ entry.end_date | escape }}{% endif -%}
+                  </span>
                 </div>
               {% elsif entry.date %}
-                <div style="font-size: 0.9rem; opacity: 0.75;">
-                  {{ entry.date }}
-                </div>
+                <div class="cv-date">{{ entry.date | escape }}</div>
               {% endif %}
-
               {% if entry.company %}
-                <div>{{ entry.company }}</div>
+                <div>{{ entry.company | escape }}</div>
               {% endif %}
 
               {% if entry.studyType %}
-                <div>{{ entry.studyType }} in {{ entry.area }}</div>
+                <div>{{ entry.studyType | escape }} in {{ entry.area | escape }}</div>
               {% endif %}
 
               {% if entry.location %}
-                <div>{{ entry.location }}</div>
+                <div>{{ entry.location | escape }}</div>
               {% endif %}
 
               {% if entry.awarder %}
-                <div>{{ entry.awarder }}</div>
+                <div>{{ entry.awarder | escape }}</div>
               {% endif %}
 
               {% if entry.issuer %}
-                <div>{{ entry.issuer }}</div>
+                <div>{{ entry.issuer | escape }}</div>
               {% endif %}
 
               {% if entry.summary %}
-                <div>{{ entry.summary }}</div>
+                <div>{{ entry.summary | escape }}</div>
               {% endif %}
 
               {% if entry.keywords %}
-                <div>{{ entry.keywords }}</div>
+                <div>{{ entry.keywords | escape }}</div>
               {% endif %}
 
               {% if entry.highlights %}
                 <ul>
                   {% for highlight in entry.highlights %}
-                    <li>{{ highlight }}</li>
+                    <li>{{ highlight | escape }}</li>
                   {% endfor %}
                 </ul>
               {% endif %}
