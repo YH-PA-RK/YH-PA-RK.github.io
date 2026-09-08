@@ -1,0 +1,115 @@
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  {% assign cv = site.data.cv.cv %}
+
+  <article>
+    <div class="cv">
+      <div class="card mt-3 p-3">
+        <h3 class="card-title font-weight-medium">{{ cv.name }}</h3>
+        <p>{{ cv.label }}</p>
+        <p><a href="mailto:{{ cv.email }}">{{ cv.email }}</a></p>
+        {% if cv.summary %}
+          <p>{{ cv.summary }}</p>
+        {% endif %}
+      </div>
+
+      {% for section in cv.sections %}
+        {% assign section_name = section[0] %}
+        {% assign entries = section[1] %}
+
+        <div class="card mt-3 p-3">
+          <h3
+            class="card-title font-weight-medium"
+            id="{{ section_name | slugify }}"
+          >
+            {% case section_name %}
+              {% when 'Awards' %}
+                Honors &amp; Scholarships
+              {% when 'Experience' %}
+                Clinical Experience
+              {% when 'Volunteer' %}
+                Student Activities &amp; Mentoring
+              {% when 'Certificates' %}
+                Certifications &amp; Badges
+              {% else %}
+                {{ section_name }}
+            {% endcase %}
+          </h3>
+
+          {% for entry in entries %}
+            <div style="margin-bottom: 1.5rem;">
+              <div>
+                <strong>
+                  {% if entry.institution %}
+                    {{ entry.institution }}
+                  {% elsif entry.position %}
+                    {{ entry.position }}
+                  {% elsif entry.title %}
+                    {{ entry.title }}
+                  {% else %}
+                    {{ entry.name }}
+                  {% endif %}
+                </strong>
+              </div>
+
+              {% if entry.start_date %}
+                <div style="font-size: 0.9rem; opacity: 0.75;">
+                  {{ entry.start_date }}
+                  {% if entry.end_date and entry.end_date != entry.start_date %}
+                    &ndash; {{ entry.end_date }}
+                  {% endif %}
+                </div>
+              {% elsif entry.date %}
+                <div style="font-size: 0.9rem; opacity: 0.75;">
+                  {{ entry.date }}
+                </div>
+              {% endif %}
+
+              {% if entry.company %}
+                <div>{{ entry.company }}</div>
+              {% endif %}
+
+              {% if entry.studyType %}
+                <div>{{ entry.studyType }} in {{ entry.area }}</div>
+              {% endif %}
+
+              {% if entry.location %}
+                <div>{{ entry.location }}</div>
+              {% endif %}
+
+              {% if entry.awarder %}
+                <div>{{ entry.awarder }}</div>
+              {% endif %}
+
+              {% if entry.issuer %}
+                <div>{{ entry.issuer }}</div>
+              {% endif %}
+
+              {% if entry.summary %}
+                <div>{{ entry.summary }}</div>
+              {% endif %}
+
+              {% if entry.keywords %}
+                <div>{{ entry.keywords }}</div>
+              {% endif %}
+
+              {% if entry.highlights %}
+                <ul>
+                  {% for highlight in entry.highlights %}
+                    <li>{{ highlight }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </article>
+</div>
