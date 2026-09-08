@@ -26,21 +26,87 @@ latest_posts:
   scrollable: true
   limit: 3
 ---
+
 <style>
-.post-title {
-  font-size: 3.2rem !important;
-  line-height: 1.1;
-}
-.desc {
-  font-size: 1.2rem !important;
-  color: #555;
-}
-img.img-fluid.rounded {
-  width: 260px !important;
-  height: 260px !important;
-  object-fit: cover;
-}
+  .post .post-header .post-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+  }
+  .post .post-header .desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--global-text-color-light);
+  }
+  .post .profile img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+  .folio-intro {
+    line-height: 1.75;
+  }
+  .folio-interests {
+    margin-top: 1.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--global-divider-color);
+  }
+  .folio-interests h2 {
+    margin-bottom: 0.65rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .folio-interests ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    padding: 0;
+    list-style: none;
+    font-size: 0.95rem;
+  }
+  .folio-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-top: 1.25rem;
+  }
+  .folio-links a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+  .folio-links a:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 4px;
+  }
+  @media (max-width: 575px) {
+    .post .profile img {
+      margin-inline: auto;
+    }
+    .folio-interests {
+      margin-top: 1.5rem;
+    }
+  }
 </style>
-I am an undergraduate student in the Department of Nursing at Chung-Ang University (expected graduation: Feb. 2028), with research interests in nursing informatics, healthcare AI, human-AI interaction, and medical big data analytics.
+
+<div class="folio-intro" markdown="1">
+I am an undergraduate student in the Department of Nursing at Chung-Ang University (expected graduation: Feb. 2028).
 
 I am particularly interested in how data-driven and AI-based approaches can improve clinical workflow, promote patient health, and prevent medical errors.
+
+<section class="folio-interests" aria-labelledby="research-interests-heading">
+  <h2 id="research-interests-heading">Research interests</h2>
+  <ul role="list">
+    <li>Nursing informatics</li>
+    <li>Healthcare AI</li>
+    <li>Human–AI interaction</li>
+    <li>Medical big data analytics</li>
+  </ul>
+</section>
+
+<nav class="folio-links" aria-label="Explore my work">
+  <a href="{{ '/projects/' | relative_url }}">View projects</a>
+  <a href="{{ '/cv/' | relative_url }}">View CV</a>
+</nav>
+</div>
