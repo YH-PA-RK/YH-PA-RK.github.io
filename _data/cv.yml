@@ -75,11 +75,11 @@ cv:
         awarder: Chung-Ang University
         summary: "Awarded in Fall 2022, Spring 2023, Fall 2024, and Spring 2025."
 
-      - title: Chung-Ang University Alumni Association Scholarship
+      - title: Alumni Association Scholarship
         awarder: Chung-Ang University Alumni Association
         summary: "Awarded in Fall 2022 and Fall 2024."
 
-      - title: Jin-ju Jeong Scholarship
+      - title: Jin-jung Jeong Scholarship
         awarder: Chung-Ang University
         summary: "Awarded in Spring 2023."
 
@@ -87,17 +87,20 @@ cv:
         awarder: Chung-Ang University
         summary: "Awarded in Spring 2023."
 
-      - title: Chung-Ang University Department of Nursing Ambassador Activity Scholarship
+      - title: Student Ambassador Activity Scholarship
         awarder: Chung-Ang University
         summary: "Awarded in Spring 2023 and Fall 2023."
 
-      - title: Tutoring Program Encouragement Tutor Scholarship
+      - title: Tutoring Program Encouragement Scholarship
         awarder: Chung-Ang University
         summary: "Awarded in Fall 2023."
 
-      - title: Tutoring Program Excellence Tutor Scholarship
+      - title: Tutoring Program Excellence Scholarship
         awarder: Chung-Ang University
         summary: "Awarded in Spring 2024."
+
+      - title: Scholarship for Children of Restaurant Owners
+        summary: "Awarded in Spring 2024 and Fall 2024."
 
     Volunteer:
       - company: SeRaPhic, Department of Nursing, Chung-Ang University
