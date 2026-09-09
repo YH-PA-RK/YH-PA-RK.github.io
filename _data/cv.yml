@@ -148,23 +148,15 @@ cv:
           - "🎉 Received the Excellence Award."
 
     Certificates:
-      - name: SQL Developer (SQLD)
-        date: 2026
-        issuer: Korea Data Agency
+      - name: Chinese Characters (Hanja), Level 4
+        date: 2023
+        issuer: Korea Institute of Live-long Education Evaluation
 
-      - name: Advanced Data Analytics Semi-Professional (ADsP)
-        date: 2026
-        issuer: Korea Data Agency
-
-      - name: HTHT (High Touch High Tech) Master Badge
+      - name: AI&Deep Learning Master Badge
         date: 2025
         issuer: Chung-Ang University
 
       - name: Culture&Creator Master Badge
-        date: 2025
-        issuer: Chung-Ang University
-
-      - name: Meta AI Master Badge
         date: 2025
         issuer: Chung-Ang University
 
@@ -176,13 +168,21 @@ cv:
         date: 2025
         issuer: Chung-Ang University
 
-      - name: AI&Deep Learning Master Badge
+      - name: HTHT (High Touch High Tech) Master Badge
         date: 2025
         issuer: Chung-Ang University
 
-      - name: Chinese Characters (Hanja), Level 4
-        date: 2023
-        issuer: Korea Institute of Live-long Education Evaluation
+      - name: Meta AI Master Badge
+        date: 2025
+        issuer: Chung-Ang University
+
+      - name: Advanced Data Analytics Semi-Professional (ADsP)
+        date: 2026
+        issuer: Korea Data Agency
+
+      - name: SQL Developer (SQLD)
+        date: 2026
+        issuer: Korea Data Agency
 
     Interests:
       - name: Research Interests
