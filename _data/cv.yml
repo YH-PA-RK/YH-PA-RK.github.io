@@ -33,6 +33,43 @@ cv:
         start_date: "2021-12"
         end_date: "2022-02"
 
+    Clinical Practicum:
+      - institution: Kangbuk Samsung Hospital
+        area: Pediatrics Ward
+        start_date: "2024-02-26"
+        end_date: "2024-03-08"
+        grade: A
+
+      - institution: Chung-Ang University Hospital
+        area: Thoracic Surgery Ward
+        start_date: "2024-03-25"
+        end_date: "2024-04-05"
+        grade: A+
+
+      - institution: Eunpyeong-gu Public Health Center
+        area: Health Promotion Division
+        start_date: "2024-04-29"
+        end_date: "2024-05-10"
+        grade: A+
+
+      - institution: Seoul Seniors Tower, Gayang Tower
+        area: Geriatric Ward
+        start_date: "2024-09-09"
+        end_date: "2024-09-20"
+        grade: A+
+
+      - institution: H+ Yangji Hospital
+        area: Orthopedics / Surgery Ward
+        start_date: "2024-10-07"
+        end_date: "2024-10-18"
+        grade: A+
+
+      - institution: Chung-Ang University Hospital
+        area: Emergency Department
+        start_date: "2024-11-11"
+        end_date: "2024-11-22"
+        grade: A+
+
     Awards:
       - title: Academic Excellence Scholarship
         awarder: Chung-Ang University

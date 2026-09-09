@@ -83,6 +83,56 @@
     grid-column: 2;
     grid-row: 1;
   }
+  .folio-cv .cv-practicum-scroll {
+    overflow-x: auto;
+  }
+  .folio-cv .cv-practicum-scroll:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 2px;
+  }
+  .folio-cv .cv-practicum-table {
+    width: 100%;
+    min-width: 36rem;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  .folio-cv .cv-practicum-table th,
+  .folio-cv .cv-practicum-table td {
+    padding: 0.75rem 0.5rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .folio-cv .cv-practicum-table th {
+    padding-top: 0;
+    font-weight: 600;
+  }
+  .folio-cv .cv-practicum-table th:first-child,
+  .folio-cv .cv-practicum-table td:first-child {
+    width: 33%;
+    padding-left: 0;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .folio-cv .cv-practicum-table th:nth-child(2) {
+    width: 31%;
+  }
+  .folio-cv .cv-practicum-table th:last-child,
+  .folio-cv .cv-practicum-table td:last-child {
+    width: 9%;
+    padding-right: 0;
+    text-align: right;
+    font-weight: 600;
+  }
+  .folio-cv .cv-practicum-table tr:last-child td {
+    border-bottom: 0;
+  }
+  .folio-cv .cv-practicum-note {
+    margin: 0.5rem 0 0;
+    font-size: 0.8125rem;
+    color: var(--global-text-color-light);
+  }
   @media (max-width: 600px) {
     .folio-cv .cv-dated {
       display: flex;
@@ -129,73 +179,102 @@
             {% endcase %}
           </h3>
 
-          {% for entry in entries %}
-            <div class="cv-entry{% if entry.start_date %} cv-dated{% endif %}">
-              <div>
-                <strong>
-                  {% if entry.institution %}
-                    {{ entry.institution | escape }}
-                  {% elsif entry.position %}
-                    {{ entry.position | escape }}
-                  {% elsif entry.title %}
-                    {{ entry.title | escape }}
-                  {% else %}
-                    {{ entry.name | escape }}
-                  {% endif %}
-                </strong>
-              </div>
-
-              {% if entry.start_date %}
-                <div class="cv-date">
-                  <span class="badge font-weight-bold danger-color-dark">
-                    {{- entry.start_date | escape -}}
-                    {%- if entry.end_date == 'present' %}
-                      ~
-                    {%- elsif entry.end_date and entry.end_date != entry.start_date %}
-                      &ndash; {{ entry.end_date | escape -}}
-                    {%- endif -%}
-                  </span>
-                </div>
-              {% elsif entry.date %}
-                <div class="cv-date">{{ entry.date | escape }}</div>
-              {% endif %}
-              {% if entry.company %}
-                <div>{{ entry.company | escape }}</div>
-              {% endif %}
-
-              {% if entry.studyType %}
-                <div>{{ entry.studyType | escape }} in {{ entry.area | escape }}</div>
-              {% endif %}
-
-              {% if entry.location %}
-                <div>{{ entry.location | escape }}</div>
-              {% endif %}
-
-              {% if entry.awarder %}
-                <div>{{ entry.awarder | escape }}</div>
-              {% endif %}
-
-              {% if entry.issuer %}
-                <div>{{ entry.issuer | escape }}</div>
-              {% endif %}
-
-              {% if entry.summary %}
-                <div>{{ entry.summary | escape }}</div>
-              {% endif %}
-
-              {% if entry.keywords %}
-                <div>{{ entry.keywords | escape }}</div>
-              {% endif %}
-
-              {% if entry.highlights %}
-                <ul>
-                  {% for highlight in entry.highlights %}
-                    <li>{{ highlight | escape }}</li>
+          {% if section_name == 'Clinical Practicum' %}
+            <div class="cv-practicum-scroll" role="region" aria-labelledby="clinical-practicum" tabindex="0">
+              <table class="cv-practicum-table" aria-labelledby="clinical-practicum" aria-describedby="cv-practicum-note">
+                <thead>
+                  <tr>
+                    <th scope="col">Period</th>
+                    <th scope="col">Institution</th>
+                    <th scope="col">Clinical Area</th>
+                    <th scope="col">Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for entry in entries %}
+                    <tr>
+                      <td>
+                        <time datetime="{{ entry.start_date | escape }}">{{ entry.start_date | replace: '-', '.' }}</time
+                        >&ndash;<time datetime="{{ entry.end_date | escape }}">{{ entry.end_date | replace: '-', '.' }}</time>
+                      </td>
+                      <td>{{ entry.institution | escape }}</td>
+                      <td>{{ entry.area | escape }}</td>
+                      <td>{{ entry.grade | escape }}</td>
+                    </tr>
                   {% endfor %}
-                </ul>
-              {% endif %}
+                </tbody>
+              </table>
             </div>
-          {% endfor %}
+            <p class="cv-practicum-note" id="cv-practicum-note">Grades reflect overall course performance; all courses used relative grading.</p>
+          {% else %}
+            {% for entry in entries %}
+              <div class="cv-entry{% if entry.start_date %} cv-dated{% endif %}">
+                <div>
+                  <strong>
+                    {% if entry.institution %}
+                      {{ entry.institution | escape }}
+                    {% elsif entry.position %}
+                      {{ entry.position | escape }}
+                    {% elsif entry.title %}
+                      {{ entry.title | escape }}
+                    {% else %}
+                      {{ entry.name | escape }}
+                    {% endif %}
+                  </strong>
+                </div>
+
+                {% if entry.start_date %}
+                  <div class="cv-date">
+                    <span class="badge font-weight-bold danger-color-dark">
+                      {{- entry.start_date | escape -}}
+                      {%- if entry.end_date == 'present' %}
+                        ~
+                      {%- elsif entry.end_date and entry.end_date != entry.start_date %}
+                        &ndash; {{ entry.end_date | escape -}}
+                      {%- endif -%}
+                    </span>
+                  </div>
+                {% elsif entry.date %}
+                  <div class="cv-date">{{ entry.date | escape }}</div>
+                {% endif %}
+                {% if entry.company %}
+                  <div>{{ entry.company | escape }}</div>
+                {% endif %}
+
+                {% if entry.studyType %}
+                  <div>{{ entry.studyType | escape }} in {{ entry.area | escape }}</div>
+                {% endif %}
+
+                {% if entry.location %}
+                  <div>{{ entry.location | escape }}</div>
+                {% endif %}
+
+                {% if entry.awarder %}
+                  <div>{{ entry.awarder | escape }}</div>
+                {% endif %}
+
+                {% if entry.issuer %}
+                  <div>{{ entry.issuer | escape }}</div>
+                {% endif %}
+
+                {% if entry.summary %}
+                  <div>{{ entry.summary | escape }}</div>
+                {% endif %}
+
+                {% if entry.keywords %}
+                  <div>{{ entry.keywords | escape }}</div>
+                {% endif %}
+
+                {% if entry.highlights %}
+                  <ul>
+                    {% for highlight in entry.highlights %}
+                      <li>{{ highlight | escape }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            {% endfor %}
+          {% endif %}
         </div>
       {% endfor %}
     </div>
