@@ -38,11 +38,12 @@ latest_posts:
     color: var(--global-text-color-light);
   }
   .post .profile img {
+    display: block;
     width: 100%;
-    max-width: 260px;
+    max-width: 220px;
     height: auto;
-    aspect-ratio: 1;
-    object-fit: cover;
+    aspect-ratio: auto;
+    object-fit: contain;
   }
   .folio-intro {
     line-height: 1.75;
@@ -82,6 +83,7 @@ latest_posts:
   }
   @media (max-width: 575px) {
     .post .profile img {
+      max-width: 200px;
       margin-inline: auto;
     }
     .folio-interests {
