@@ -71,14 +71,6 @@ cv:
         grade: A+
 
     Awards:
-      - title: Academic Excellence Scholarship
-        awarder: Chung-Ang University
-        summary: "Awarded in Fall 2022, Spring 2023, Fall 2024, and Spring 2025."
-
-      - title: Alumni Association Scholarship
-        awarder: Chung-Ang University Alumni Association
-        summary: "Awarded in Fall 2022 and Fall 2024."
-
       - title: Jin-ju Jeong Scholarship
         awarder: Chung-Ang University
         summary: "Awarded in Spring 2023."
@@ -98,6 +90,14 @@ cv:
       - title: Tutoring Program Excellence Tutor Scholarship
         awarder: Chung-Ang University
         summary: "Awarded in Spring 2024."
+
+      - title: Alumni Association Scholarship
+        awarder: Chung-Ang University Alumni Association
+        summary: "Awarded in Fall 2022 and Fall 2024."
+
+      - title: Academic Excellence Scholarship
+        awarder: Chung-Ang University
+        summary: "Awarded in Fall 2022, Spring 2023, Fall 2024, and Spring 2025."
 
     Volunteer:
       - company: SeRaPhic, Department of Nursing, Chung-Ang University
@@ -142,9 +142,9 @@ cv:
           - "🎉 Received the Excellence Award."
 
       - company: Chung-Ang University
-        position: Member, K-MOOC Course Monitoring Team
-        start_date: "2025-01"
-        end_date: "2025-01"
+        position: K-MOOC Course Monitoring Team — Member
+        start_date: 2025
+        end_date: 2025
 
     Certificates:
       - name: Chinese Characters (Hanja), Level 4
@@ -186,4 +186,4 @@ cv:
     Interests:
       - name: Research Interests
         icon: fa-solid fa-tag
-        keywords: "Nursing Informatics, Healthcare AI, Human-AI Interaction, Medical Big Data Analytics, Clinical Workflow Optimization, Health Promotion, Medical Error Prevention"
+        keywords: "Nursing Informatics, Healthcare AI, Human-AI Interaction, Medical Big Data Analytics"
