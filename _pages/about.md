@@ -90,6 +90,49 @@ latest_posts:
       margin-top: 1.5rem;
     }
   }
+  @media (min-width: 768px) {
+    .post:has(.folio-intro) {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      column-gap: 2rem;
+      padding-top: 2rem;
+      align-items: start;
+    }
+    .post:has(.folio-intro) > .post-header {
+      grid-column: 1;
+      grid-row: 1;
+      margin: 0 0 1.25rem;
+    }
+    .post:has(.folio-intro) > article {
+      display: contents;
+    }
+    .post:has(.folio-intro) > article > .profile {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      float: none !important;
+      width: 100%;
+      margin: 0;
+    }
+    .post:has(.folio-intro) > article > .profile figure {
+      margin-top: 0;
+    }
+    .post:has(.folio-intro) > article > .clearfix {
+      grid-column: 1;
+      grid-row: 2;
+      min-width: 0;
+    }
+    .post:has(.folio-intro) > article > .social {
+      grid-column: 1 / -1;
+      grid-row: 3;
+    }
+  }
+  @media (max-width: 767px) {
+    .post:has(.folio-intro) .profile {
+      float: none !important;
+      width: 100%;
+      margin: 0 0 1.5rem;
+    }
+  }
 </style>
 
 <div class="folio-intro" markdown="1">
