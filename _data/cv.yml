@@ -104,19 +104,16 @@ cv:
         position: Overseas Volunteering Club — Member, 8th Cohort
         start_date: 2022
         end_date: 2022
-        summary: Member of the overseas volunteering club.
 
       - company: SeRaPhic, Department of Nursing, Chung-Ang University
         position: Overseas Volunteering Club — HR Team Treasurer
         start_date: 2023
         end_date: 2023
-        summary: Served as HR team treasurer for the overseas volunteering club.
 
       - company: Nurly, Department of Nursing, Chung-Ang University
         position: Student Ambassador — Video Team Member, 5th Cohort
         start_date: 2023
         end_date: 2023
-        summary: Member of the nursing department's student ambassador video team.
 
       - company: Department of Nursing Mentoring Program, Chung-Ang University
         position: Mentoring — Anatomy
@@ -148,7 +145,6 @@ cv:
         position: Member, K-MOOC Course Monitoring Team
         start_date: "2025-01"
         end_date: "2025-01"
-        summary: Checked audio–video synchronization, subtitle accuracy, and the functionality of quizzes, discussion activities, and assignments.
 
     Certificates:
       - name: Chinese Characters (Hanja), Level 4
