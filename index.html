@@ -67,6 +67,49 @@
       margin-top: 1.5rem;
     }
   }
+  @media (min-width: 768px) {
+    .post:has(.folio-intro) {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      column-gap: 2rem;
+      padding-top: 2rem;
+      align-items: start;
+    }
+    .post:has(.folio-intro) > .post-header {
+      grid-column: 1;
+      grid-row: 1;
+      margin: 0 0 1.25rem;
+    }
+    .post:has(.folio-intro) > article {
+      display: contents;
+    }
+    .post:has(.folio-intro) > article > .profile {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      float: none !important;
+      width: 100%;
+      margin: 0;
+    }
+    .post:has(.folio-intro) > article > .profile figure {
+      margin-top: 0;
+    }
+    .post:has(.folio-intro) > article > .clearfix {
+      grid-column: 1;
+      grid-row: 2;
+      min-width: 0;
+    }
+    .post:has(.folio-intro) > article > .social {
+      grid-column: 1 / -1;
+      grid-row: 3;
+    }
+  }
+  @media (max-width: 767px) {
+    .post:has(.folio-intro) .profile {
+      float: none !important;
+      width: 100%;
+      margin: 0 0 1.5rem;
+    }
+  }
 </style> <div class="folio-intro"> <p>I am an undergraduate student in the Department of Nursing at Chung-Ang University (expected graduation: Feb. 2028).</p> <p>I am particularly interested in how data-driven and AI-based approaches can improve clinical workflow, promote patient health, and prevent medical errors.</p> <section class="folio-interests" aria-labelledby="research-interests-heading"> <h2 id="research-interests-heading">Research interests</h2> <ul role="list"> <li>Nursing informatics</li> <li>Healthcare AI</li> <li>Human–AI interaction</li> <li>Medical big data analytics</li> </ul> </section> <nav class="folio-links" aria-label="Explore my work"> <a href="/projects/">View projects</a> <a href="/cv/">View CV</a> </nav> </div> </div> <div class="social"> <div class="contact-icons"> <a href="mailto:pjs12101113@cau.ac.kr" title="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://github.com/YH-PA-RK" title="Github username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a> </div> <div class="contact-note">I check email the fastest. pjs12101113@cau.ac.kr </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 YEONGHUN PARK. Last updated: September 10, 2026. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
