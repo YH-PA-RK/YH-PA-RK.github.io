@@ -1,0 +1,13 @@
+{% comment %}
+  Keep the portfolio command palette focused on active navigation and utilities.
+  Collection demos remain available as source files for future use.
+{% endcomment %}
+{% al_search_assets %}
+<script>
+  (() => {
+    const search = document.querySelector('ninja-keys');
+    if (!search || !Array.isArray(search.data)) return;
+    const navigation = new Set(['nav-about', 'nav-projects', 'nav-cv']);
+    search.data = search.data.filter((item) => navigation.has(item.id) || item.section === 'Socials' || item.section === 'Theme');
+  })();
+</script>
