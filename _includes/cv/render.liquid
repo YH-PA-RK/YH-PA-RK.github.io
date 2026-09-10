@@ -73,6 +73,10 @@
     border: 1px solid var(--global-divider-color);
     border-radius: 2px;
   }
+  .folio-cv .cv-badge-link {
+    margin: 0 0 1rem;
+  }
+  .folio-cv .cv-certificates .cv-badge-link + .cv-entry,
   .folio-cv .cv-certificates .card-title + .cv-entry {
     margin-top: 0;
   }
@@ -179,7 +183,7 @@
           </h3>
 
           {% if section_name == 'Certificates' %}
-            <p>
+            <p class="cv-badge-link">
               <a
                 href="https://badge.omnione.net/share/badges/bWVtYmVyczoreWFzMzZiU2ZCVnBIZ08zNnc1R2UrSFhzN2xXQjBDTlBWQ1hqeEt3cHJrPQ=="
                 target="_blank"
